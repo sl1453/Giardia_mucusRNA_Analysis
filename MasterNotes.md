@@ -18,6 +18,8 @@ Preliminary trimming and fastqc showed a poor "per sequence base content" for th
 
 ### Mapping
 
+STAR (v2.7.1a)
+
 ### Generating count matrix with HTSeq (htseq-count)
 
 ## Downstream
