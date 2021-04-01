@@ -16,9 +16,15 @@ FastQC (v0.11.9) was used for quality control visualization ([script](https://gi
 
 Preliminary trimming and fastqc showed a poor "per sequence base content" for the first ~15 bases. We decided to use HEADCROP flag to remove the first 15 bases. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming.
 
+Most samples have warnings or fail for "per sequence GC content" and "sequence duplication levels", which I sort of expect based on RNAseq data. An interesting occurence, using HEADCROP results in all samples failing "per sequence tile quality", while trimming without HEADCROP results only in a warning for this. 
+
 ### Mapping
 
+Mapping was done using the *Culex quinquefasciatus* reference genome ([GCF_015732765.1](https://www.ncbi.nlm.nih.gov/assembly/GCF_015732765.1/)) found on NCBI
+
 STAR (v2.7.1a)
+
+
 
 ### Generating count matrix with HTSeq (htseq-count)
 
