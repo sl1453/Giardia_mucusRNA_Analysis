@@ -16,7 +16,9 @@ FastQC (v0.11.9) was used for quality control visualization ([script](https://gi
 
 Preliminary trimming and fastqc showed a poor "per sequence base content" for the first ~15 bases. We decided to use HEADCROP flag to remove the first 15 bases. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming.
 
-Most samples have warnings or fail for "per sequence GC content" and "sequence duplication levels", which I sort of expect based on RNAseq data. An interesting occurence, using HEADCROP results in all samples failing "per sequence tile quality", while trimming without HEADCROP results only in a warning for this. 
+Most samples have warnings or fail for "per sequence GC content" and "sequence duplication levels", which I sort of expect based on RNAseq data. An interesting occurence, using the HEADCROP flag to remove the first 15 bases results in all samples failing "per sequence tile quality", while trimming without HEADCROP results only in a warning for this. This is likely because the samples are now being measured over 135b instead of 150b, which I guess makes this check fail for sequence tile quality.
+
+"Overrepresented sequences" all blast to Culex (and related mosquitoes) or else are too repetitive to map to any organism. All the overrepresented sequences from each sample can be found [here](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/misc/OverrepSequences.txt), annotated with whether they could be blasted mapped and to what.
 
 ### Mapping
 
