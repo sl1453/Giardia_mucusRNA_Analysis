@@ -24,11 +24,18 @@ Most samples have warnings or fail for "per sequence GC content" and "sequence d
 
 Mapping was done using the *Culex quinquefasciatus* reference genome ([GCF_015732765.1](https://www.ncbi.nlm.nih.gov/assembly/GCF_015732765.1/)) found on NCBI
 
-STAR (v2.7.1a)
+STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_index.sh)) and then mapping the reads ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_map.sh))
 
-
+Output sam files were converted to bam and then indexed ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/sam2bam.sh))
 
 ### Generating count matrix with HTSeq (htseq-count)
 
+HTSeq (v0.13.5) was used to counts reads mapped to genes for downstream analyses ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/htseq_count.sh))
+
 ## Downstream
 
+### DESeq
+
+### GO Enrichment
+
+### KEGG Pathway Enrichment
