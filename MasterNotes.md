@@ -24,7 +24,9 @@ Most samples have warnings or fail for "per sequence GC content" and "sequence d
 
 Mapping was done using the *Culex quinquefasciatus* reference genome ([GCF_015732765.1](https://www.ncbi.nlm.nih.gov/assembly/GCF_015732765.1/)) found on NCBI
 
-STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_index.sh)) and then mapping the reads ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_map.sh))
+STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_index.sh)).
+
+Reads were mapped in a two pass method. The first pass followed typical method with splice junctions from annotations ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_map.sh)). The second pass is similar except that it additionally uses the output splice junctions info from the first pass (these would be novel splice junctions) to facilitate mapping ([script]()).
 
 Output sam files were converted to bam and then indexed ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/sam2bam.sh))
 
