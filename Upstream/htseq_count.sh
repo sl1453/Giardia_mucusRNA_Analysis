@@ -23,7 +23,7 @@ files=(${bam_dir}/*_Aligned.out.bam)
 for file in ${files[@]}
 do
 base=`basename ${file} _Aligned.out.bam`
-${htseq} -f bam -r pos -s no -t exon -i gene_id ${bam_dir}/${base}_Aligned.out.bam ${ref} > ${count_dir}/${base}_htseqCount
+${htseq} -f bam -r pos -s yes -t exon -i gene_id ${bam_dir}/${base}_Aligned.out.bam ${ref} > ${count_dir}/${base}_htseqCount
 
 done
 
