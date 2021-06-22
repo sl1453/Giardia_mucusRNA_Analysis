@@ -36,8 +36,13 @@ HTSeq (v0.13.5) was used to counts reads mapped to genes for downstream analyses
 
 ## Downstream
 
+All downstream analysis done in R using R version 4.0.2
+
 ### DESeq
+Using DESeq2 (v1.30.1)
 
 ### GO Enrichment
+Using topGO (v2.42.0)
 
 ### KEGG Pathway Enrichment
+Using a custom script for KEGG term enrichment in pathways all pulled from KEGG
