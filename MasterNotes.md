@@ -39,10 +39,10 @@ HTSeq (v0.13.5) was used to counts reads mapped to genes for downstream analyses
 All downstream analysis done in R using R version 4.0.2
 
 ### DESeq
-Using DESeq2 (v1.30.1)
+Using DESeq2 (v1.30.1) ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Downstream/DESeq.R))
 
 ### GO Enrichment
-Using topGO (v2.42.0)
+Using topGO (v2.42.0) ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Downstream/GOenrichment.R))
 
 ### KEGG Pathway Enrichment
-Using a custom script for KEGG term enrichment in pathways all pulled from KEGG
+Using a custom script for KEGG term enrichment in pathways all pulled from KEGG ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Downstream/KEGG.R))
