@@ -11,7 +11,8 @@ split -l 2100 geneIDlist.txt geneIDlist_segment
 ```
 
 ## Using efetch to get the alias information 
-I ran a script on each of the multiple gene ID files, using efetch to pull alias information from NCBI
+I ran a script on each of the multiple gene ID files, using efetch to pull alias information from NCBI. The older assembly that NCBI has alias information for is CulPip1.0 (GCA_000209185.1)
+
 
 [script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/misc/convert_geneID_locusTag.sh)
 
