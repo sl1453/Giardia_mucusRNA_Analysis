@@ -163,3 +163,23 @@ pheatmap(norm_DEGsig,
          scale = "row", 
          fontsize_row = 10, 
          height = 20)
+
+##################
+# Make output excel sheet to match M.F.P.'s old excel sheets
+res_print <- as.data.frame(res_LFC)
+res_print$geneID <- row.names(res_print)
+
+head(res_print)
+
+# Find gene names with mygene package
+dat <- queryMany(res_print$geneID, scopes="symbol", fields=c("name"))
+
+res_merged <- merge(res_print, dat, by.x="geneID", by.y="query")
+
+keep_cols <- c("geneID", "name", "log2FoldChange", "pvalue", "padj")
+
+
+# Write out a csv with these data
+write.csv(res_merged[keep_cols], 
+          file="../misc/Culex_DESeq_results.csv", row.names = F)
+
