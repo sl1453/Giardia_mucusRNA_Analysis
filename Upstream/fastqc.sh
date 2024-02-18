@@ -11,6 +11,7 @@
 
 #- RUN fastqc ----------------------------------------------------------------#
 
-/home/sm3679/bin/FastQC/fastqc -o /home/sm3679/culex_biting/fastqc_dir /home/sm3679/culex_biting/trim_dir/*PE.fastq.gz
+module load fastqc/0.11.9
+fastqc -o /home/sl1453/fastqc_untrimmed /home/sl1453/raw_untrimmed/*fastq.gz
 
 #- FIN -----------------------------------------------------------------------#
