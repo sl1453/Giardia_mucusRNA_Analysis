@@ -15,7 +15,7 @@ parameters: simple clip threshold=7, seed mismatches=2, palindrome threshold=40,
 
 Trimmomatic (version 0.39) was used to trim sequence reads based on quality ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.sh))
 
-FastQC (v0.11.9) was used for quality control visualization ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/fastqc.sh))
+FastQC (v0.11.9) was used for quality control visualization ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.sh))
 
 Preliminary trimming and fastqc showed a poor "per sequence base content" for the first ~15 bases. We decided to use HEADCROP flag to remove the first 15 bases. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming.
 
