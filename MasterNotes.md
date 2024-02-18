@@ -9,6 +9,9 @@ Data was generated, raw reads...
 The raw reads are available in NCBI’s short read archive (SRA) under accession number XXXXYYYY
 
 ### Preprocessing and Quality Control
+Raw Reads came in Trimmed and Untrimmed from the sequencing center. Parameter used by Maryland Sequencing Center are: 
+Trimmomatic (version 0.33)
+parameters: simple clip threshold=7, seed mismatches=2, palindrome threshold=40, minimum sequence length=30, and training quality=20.
 
 Trimmomatic (version 0.39) was used to trim sequence reads based on quality ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/trim.sh))
 
