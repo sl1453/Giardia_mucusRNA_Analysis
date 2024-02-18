@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=fastqc --output=%x.%j.out
-#SBATCH --mail-type=END,FAIL --mail-user=sm3679@georgetown.edu
+#SBATCH --mail-type=END,FAIL --mail-user=sl1453@georgetown.edu
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=12:00:00
 #SBATCH --mem=1G
 
