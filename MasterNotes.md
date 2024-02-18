@@ -15,7 +15,7 @@ parameters: simple clip threshold=7, seed mismatches=2, palindrome threshold=40,
 
 FastQC (v0.11.9) was used for quality control visualization
 Raw_untrimmed:([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.SBATCH))
-Swquencing_center_trimmed: ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_umd_trimmed.SBATCH))
+Sequencing_center_trimmed: ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_umd_trimmed.SBATCH))
 
 Trimmomatic (version 0.39) was used to trim sequence reads based on quality ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.sh))
 
