@@ -21,7 +21,7 @@ adapter=/home/sl1453/trimmomatic/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:
 
 #- RUN Trimmomatic-------------------------------------------------------------$
 
-files=(${raw_dir}/*_R1fastq.gz)
+files=(${raw_dir}/*_R1.fastq.gz)
 for file in ${files[@]}
 do
 name=${file}
