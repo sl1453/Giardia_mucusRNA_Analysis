@@ -2,7 +2,7 @@
 #SBATCH --job-name=trim --output=%x.%j.out
 #SBATCH --mail-type=END,FAIL --mail-user=sl1453@georgetown.edu
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=24:00:00
-#SBATCH --mem=4G
+#SBATCH --mem=40G
 
 #-----------------------------------------------------------------------------#
 # This script runs trimmomatic to clean up raw reads #
