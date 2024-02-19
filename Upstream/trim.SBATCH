@@ -21,14 +21,14 @@ adapter=/home/sl1453/trimmomatic/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:
 
 #- RUN Trimmomatic-------------------------------------------------------------$
 
-files=(${raw_dir}/*fastq.gz)
+files=(${raw_dir}/*_R1_fastq.gz)
 for file in ${files[@]}
 do
 name=${file}
-base=`basename ${name} _R1_001.fastq.gz`
+base=`basename ${name} _R1.fastq.gz`
 java -Xmx2G -jar ${trim} PE \
-          ${raw_dir}/${base}_R1_001.fastq.gz \
-          ${raw_dir}/${base}_R2_001.fastq.gz \
+          ${raw_dir}/${base}_R1.fastq.gz \
+          ${raw_dir}/${base}_R2.fastq.gz \
           ${trim_dir}/${base}_1_PE.fastq.gz ${trim_dir}/${base}_1_SE.fastq.gz \
           ${trim_dir}/${base}_2_PE.fastq.gz ${trim_dir}/${base}_2_SE.fastq.gz \
           ILLUMINACLIP:${adapter} \
