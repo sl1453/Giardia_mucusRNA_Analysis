@@ -16,7 +16,7 @@ trim_dir=/home/sl1453/trimmomatic/trim_1
 
 out_dir=/home/sl1453/StarMap/sam_dir
 
-refgen_dir=/home/sl1453/genome/
+refgen_dir=/home/sl1453/genome/indexed_genome
 
 
 #- RUN STAR----------------------------------------------------------------#
