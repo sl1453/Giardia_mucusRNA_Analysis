@@ -12,6 +12,6 @@
 #- RUN fastqc ----------------------------------------------------------------#
 
 module load fastqc/0.11.9
-fastqc -o /home/sl1453/fastqc_untrimmed /home/sl1453/raw_untrimmed/*fastq.gz
+fastqc -o /home/sl1453/Qality/fastqc_Luke_trimmed /home/sl1453/raw_Luke_trimmed/*fastq.gz
 
 #- FIN -----------------------------------------------------------------------#
