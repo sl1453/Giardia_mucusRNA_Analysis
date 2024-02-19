@@ -11,13 +11,13 @@
 
 #- Set variables --------------------------------------------------------------$
 
-raw_dir=/home/sm3679/culex_biting/raw_data
+raw_dir=/home/sl1453/raw_untrimmed
 
-trim_dir=/home/sm3679/culex_biting/trim_dir2
+trim_dir=/home/sl1453/trimmomatic/trim_1
 
-trim=/home/sm3679/bin/Trimmomatic-0.39/trimmomatic-0.39.jar
+trim=/home/sl1453/trimmomatic/Trimmomatic-0.39/trimmomatic-0.39.jar
 
-adapter=/home/sm3679/bin/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
+adapter=/home/sl1453/trimmomatic/Trimmomatic-0.39/adapters/TruSeq3-PE-2.fa:2:30:10
 
 #- RUN Trimmomatic-------------------------------------------------------------$
 
