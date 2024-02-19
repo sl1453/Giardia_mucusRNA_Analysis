@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=STAR_index --output=%x.%j.out
-#SBATCH --mail-type=END,FAIL --mail-user=sm3679@georgetown.edu
+#SBATCH --mail-type=END,FAIL --mail-user=sl1453@georgetown.edu
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=12:00:00
-#SBATCH --mem=100G
+#SBATCH --mem=5G
 
 #-----------------------------------------------------------------------------#
 # This script makes index of the ref genome using STAR #
@@ -12,17 +12,16 @@ module load star/2.7.1a
 
 #- Set variables ----------------------------------------------------------------#
 
-refgen_dir=/home/sm3679/culex_biting/culex_genome
-refgen_index=/home/sm3679/culex_biting/culex_genome/index_genome
+refgen_dir=/home/sl1453/genome
+refgen_index=/home/sl1453/genome/indexed_genome
 
 
 #- RUN STAR----------------------------------------------------------------#
 
 STAR --runMode genomeGenerate \
         --genomeDir ${refgen_index} \
-        --genomeFastaFiles ${refgen_dir}/GCF_015732765.1_VPISU_Cqui_1.0_pri_paternal_genomic.fna \
-        --sjdbGTFfile ${refgen_dir}/GCF_015732765.1_VPISU_Cqui_1.0_pri_paternal_genomic.gtf \
-        --sjdbOverhang 135 \
-        --genomeSAindexNbases 13
+        --genomeFastaFiles ${refgen_dir}/GiardiaDB-66_GintestinalisAssemblageAWB2019_Genome.fasta \
+        --sjdbGTFfile ${refgen_dir}/GiardiaDB-66_GintestinalisAssemblageAWB2019.gff \
+        --genomeSAindexNbases 11
 
 #- FIN -----------------------------------------------------------------------#
