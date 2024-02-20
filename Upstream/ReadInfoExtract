@@ -17,7 +17,7 @@ echo "File Name,Read Number" > "$output_file"
 # Loop through all _stats.txt files in the directory
 for file in *_stats.txt; do
     # Extract the read number
-    read_number=$(awk '/reads/{print $(NF-1)}' "$file")
+    read_number=$(grep "reads" "$file" | awk '{print $4}')
 
     # Output the file name and the read number to the output file
     echo "${file},${read_number}" >> "$output_file"
