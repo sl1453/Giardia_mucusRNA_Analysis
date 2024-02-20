@@ -8,7 +8,7 @@
 # This script uses htseq to count and assign reads to genes #
 #-----------------------------------------------------------------------------#
 
-source activate htseq-clip 
+source /home/sl1453/python-env/bin/activate
 
 #- Set variables ----------------------------------------------------------------#
 
