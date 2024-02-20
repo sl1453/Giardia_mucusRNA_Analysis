@@ -1,7 +1,7 @@
 # Workflow/pipeline details for the Giardia response to viscoelasticity RNA-seq analysis
 
 ## Upstream 
-Information about sequence reads (raw read count, read alignment rate, etc.) for the data can be found [here](https://docs.google.com/spreadsheets/d/1gdl8zYpxvM8_0Y9qKmxfc-2nF0nWNyan52LP2LRMqZM/edit#gid=0)
+Information about sequence reads (raw read count, read alignment rate, etc.) for the data can be found ([here](https://docs.google.com/spreadsheets/d/17yXVA9PE-rkG_24pJ2p31cf8QelNo2Ly/edit?rtpof=true#gid=566235505))
 
 ### Data Accession
 Data was generated, raw reads...
