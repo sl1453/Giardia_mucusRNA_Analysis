@@ -18,28 +18,37 @@ FastQC (v0.11.9) was used for quality control visualization
 Raw_untrimmed:([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.SBATCH))    
 Sequencing_center_trimmed: ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_umd_trimmed.SBATCH))
 
+Most samples have warnings or fail for "per sequence GC content", which I expected because Giardia has high GC contents; and poor "sequence duplication levels" which I expect for RNAseq data. The "per base quality" score always dropps at the end of fragments, and ONLY seen in read 2 sequences.
+
+The QC for the prileminary trimming from Luke has successfully removed the adaptor warnings, however, still show poor "per base GC contents" for the first ~15 bases. I decided to use HEADCROP flag to remove the first 15 bases for the UNTRIMMED RAW READS while keeping the adaptor trimming parameters similar to Luke's. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming. 
+
 Trimmomatic (version 0.39) was used to trim sequence reads based on quality ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/trim.SBATCH))
 
+My trimming results in shorter sequences ~130bp, improved the "per base GC contents". The end sequece "per base quality" score dropping was not improved as I only kept the "Trailing" parameter as low as 6, to advoid extremmely short fragemnts. 
 
-Preliminary trimming and fastqc showed a poor "per sequence base content" for the first ~15 bases. We decided to use HEADCROP flag to remove the first 15 bases. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming.
-
-Most samples have warnings or fail for "per sequence GC content" and "sequence duplication levels", which I expect for RNAseq data. An interesting occurence, using the HEADCROP flag to remove the first 15 bases results in all samples failing "per sequence tile quality", while trimming without HEADCROP results only in a warning for this. This is likely because the samples are now being measured over 135b instead of 150b, which I guess makes this check fail for sequence tile quality.
-
-"Overrepresented sequences" all blast to Culex (and related mosquitoes) or else are too repetitive to map to any organism. All the overrepresented sequences from each sample can be found [here](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/misc/OverrepSequences.txt), annotated with whether they could be blasted mapped and to what.
 
 ### Mapping
 
-Mapping was done using the *Culex quinquefasciatus* reference genome ([GCF_015732765.1](https://www.ncbi.nlm.nih.gov/assembly/GCF_015732765.1/)) found on NCBI
+Mapping was done using the *_Giardia_ assenblage A WB * reference genome from Giardia DB website ([xue et al. 2019 version](https://giardiadb.org/giardiadb/app/record/dataset/TMPTX_gassAWB2019)). ([GFF file](https://giardiadb.org/giardiadb/app/downloads/Current_Release/GintestinalisAssemblageAWB2019/gff/data/))
 
-STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_index.sh)).
+STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_index.SBATCH)).
 
-Reads were mapped in a two pass method. The first pass followed typical method with splice junctions from annotations ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_map.sh)). The second pass is similar except that it additionally uses the output splice junctions info from the first pass (these would be novel splice junctions) to facilitate mapping ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/STAR_map_twopass.sh)).
+Reads were mapped in a two pass method. The first pass followed typical method with splice junctions from annotations ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_map.SBATCH)). Becasue most of VSP genes are duplicated, parameter "outFilterMultimapNmax 2" was chosen;  "alignIntronMax 1" was to account for the fact that _Giardia_ has very few introns (8 cis, 5 trans); "outSAMtype BAM Unsorted".
 
-Output sam files were converted to bam and then indexed ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/sam2bam.sh))
+Output bam files were sorted, and then indexed ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/SamSortBam.SBATCH))
 
 ### Generating count matrix with HTSeq (htseq-count)
 
-HTSeq (v0.13.5) was used to counts reads mapped to genes for downstream analyses ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Upstream/htseq_count.sh))
+HTSeq (v0.13.5) was used to counts reads mapped to genes for downstream analyses ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/htseq_count.SBATCH))
+
+Parameters: 
+-s reverse                :ths is for "first-stranded" library, using NEB Ultra II Directional kit.
+--nonunique fraction      :multimapping reads are fractionally counted (each alignment carrying 1/2 count, since the parameter outFilterMultimapNmax was previously set to 2 in the alignment step). 
+or
+--nonunique none (default): the read (or read pair) is counted as ambiguous and not counted for any features.
+
+### Alternative Generating count matrix with featurecounts
+
 
 ## Downstream
 
