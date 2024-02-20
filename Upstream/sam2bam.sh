@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=sam2bam --output=%x.%j.out
-#SBATCH --mail-type=END,FAIL --mail-user=sm3679@georgetown.edu
+#SBATCH --mail-type=END,FAIL --mail-user=sl1453@georgetown.edu
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=12:00:00
 #SBATCH --mem=4G
 
@@ -12,18 +12,17 @@ module load samtools/1.9
 
 #- Set variables ----------------------------------------------------------------#
 
-sam_dir=/home/sm3679/culex_biting/sam_dir
-bam_dir=/home/sm3679/culex_biting/bam_dir
+sam_dir=/home/sl1453/StarMap/sam_dir
+bam_dir=/home/sl1453/samSortBam
 
 #- RUN fastqc ----------------------------------------------------------------#
 
-files=(${sam_dir}/*_Aligned.out.sam)
+files=(${sam_dir}/*.out.bam)
 for file in ${files[@]}
 do
-base=`basename ${file} _Aligned.out.sam`
-samtools view -b -S ${sam_dir}/${base}_Aligned.out.sam | samtools sort -o ${bam_dir}/${base}_Aligned.out.bam
-rm -f ${sam_dir}/${base}_Aligned.out.sam
-samtools index ${bam_dir}/${base}_Aligned.out.bam
+base=`basename ${file} .out.bam`
+samtools sort -o ${bam_dir}/${base}.out.sorted.bam
+samtools index ${bam_dir}/${base}.out.sorted.bam
 
 done
 
