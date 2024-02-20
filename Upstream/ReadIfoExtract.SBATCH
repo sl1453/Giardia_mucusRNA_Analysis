@@ -9,7 +9,7 @@
 
 # Change to the directory containing your files
 #---------------------------------------------------------------------
-cd home/sl1453/raw_untrimmed
+cd raw_untrimmed
 
 # Create an output file to store the results
 output_file="read_numbers_summary.txt"
