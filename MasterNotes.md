@@ -29,7 +29,7 @@ My trimming results in shorter sequences ~130bp, improved the "per base GC conte
 
 ### Mapping
 
-Mapping was done using the *_Giardia_ assenblage A WB * reference genome from Giardia DB website ([xue et al. 2019 version](https://giardiadb.org/giardiadb/app/record/dataset/TMPTX_gassAWB2019)). ([GFF file](https://giardiadb.org/giardiadb/app/downloads/Current_Release/GintestinalisAssemblageAWB2019/gff/data/))
+Mapping was done using the *_Giardia_ assenblage A WB * reference genome from Giardia DB website ([xu et al. 2019 version](https://giardiadb.org/giardiadb/app/record/dataset/TMPTX_gassAWB2019)). ([GFF file](https://giardiadb.org/giardiadb/app/downloads/Current_Release/GintestinalisAssemblageAWB2019/gff/data/))
 
 STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_index.SBATCH)).
 
