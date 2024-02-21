@@ -12,15 +12,15 @@ module load samtools/1.9
 
 #- Set variables ----------------------------------------------------------------#
 
-unsorted.bam_dir=/home/sl1453/StarMap/unsorted.bam_dir
+unsortedBam_dir=/home/sl1453/StarMap/unsortedBam_dir
 bam_dir=/home/sl1453/samsortbam
 
 #- RUN samSortBam -------------------------------------------------------------$
 
-files=(${unsorted.bam_dir}/*_Aligned.out.bam)
+files=(${unsortedBam_dir}/*_Aligned.out.bam)
 for file in ${files[@]}
 do
-  base=`basename ${file}_Aligned.out.bam`
+  base=$(basename $file _Aligned.out.bam)
   samtools sort -o ${bam_dir}/${base}_Aligned.out.sorted.bam $file
   samtools index ${bam_dir}/${base}_Aligned.out.sorted.bam
 
