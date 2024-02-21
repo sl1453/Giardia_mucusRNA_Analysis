@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=sam2bam --output=%x.%j.out
+#SBATCH --job-name=samSortBam --output=%x.%j.out
 #SBATCH --mail-type=END,FAIL --mail-user=sl1453@georgetown.edu
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=1 --time=12:00:00
 #SBATCH --mem=4G
