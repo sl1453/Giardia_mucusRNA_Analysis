@@ -5,7 +5,7 @@
 #SBATCH --mem=4G
 
 #-----------------------------------------------------------------------------#
-# This script converts sam to bam, sorts/indexes the bam files #
+# This script converts unsorted bam to sorted bam, indexes the bam files #
 #-----------------------------------------------------------------------------#
 
 module load samtools/1.9
