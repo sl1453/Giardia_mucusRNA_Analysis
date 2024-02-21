@@ -12,17 +12,18 @@ module load samtools/1.9
 
 #- Set variables ----------------------------------------------------------------#
 
-sam_dir=/home/sl1453/StarMap/sam_dir
-bam_dir=/home/sl1453/samSortBam
+unsorted.bam_dir=/home/sl1453/StarMap/unsorted.bam_dir
+bam_dir=/home/sl1453/samsortbam
 
-#- RUN fastqc ----------------------------------------------------------------#
+#- RUN samSortBam -------------------------------------------------------------$
 
-files=(${sam_dir}/*.out.bam)
+files=(${unsorted.bam_dir}/*_Aligned.out.bam)
 for file in ${files[@]}
 do
-base=`basename ${file} .out.bam`
-samtools sort -o ${bam_dir}/${base}.out.sorted.bam
-samtools index ${bam_dir}/${base}.out.sorted.bam
+  base=`basename ${file}_Aligned.out.bam`
+  samtools sort -o ${bam_dir}/${base}_Aligned.out.sorted.bam $file
+  samtools index ${bam_dir}/${base}_Aligned.out.sorted.bam
+
 
 done
 
