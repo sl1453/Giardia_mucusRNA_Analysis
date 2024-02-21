@@ -10,7 +10,7 @@
 
 module load samtools/1.9
 
-#- Set variables ----------------------------------------------------------------#
+#- Set variables --------------------------------------------------------------$
 
 unsortedBam_dir=/home/sl1453/StarMap/unsortedBam_dir
 bam_dir=/home/sl1453/samsortbam
@@ -23,6 +23,9 @@ do
   base=$(basename $file _Aligned.out.bam)
   samtools sort -o ${bam_dir}/${base}_Aligned.out.sorted.bam $file
   samtools index ${bam_dir}/${base}_Aligned.out.sorted.bam
+
+
+done
 
 
 done
