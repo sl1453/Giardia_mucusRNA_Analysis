@@ -6,14 +6,28 @@ Our HPC uses a module system and have different versions of anaconda and python 
 * Remember to set up different virtue enviroments if your projects involve using different versions of the same software and dependencies.
 * This is to advoid conflicts.
 
-To check the anaconda/python versions available in your shared facility `module avail '
+__ To check the anaconda/python versions available in your shared facility __  `module avail '
 
-To check what environment you already have `conda info --envs`
+__ To check what environment you already have `conda info --envs` __
 * The output will list all the environemnt you already have, including their paths.
 * and the * symbol highlights the env you are currently in.
-* base: base is the default environment that comes with Anaconda.      
+* __ base__ : base is the default environment that comes with Anaconda.      
   * When you open a new terminal or a new session, by default, the base environment is activated unless you specify otherwise.  
   * The path /home/share/apps/python/anaconda3-3.9 shows where this environment is located on your file system. This path contains the Python interpreter and installed packages for the base environment.
+ 
+#### Additional Notes:
+Using Conda is recommended
+
+__ Purpose of Multiple Environments:__    
+
+The main advantage of having multiple conda environments is to maintain different sets of dependencies and packages for different projects or purposes. For instance, one environment can have Python 3.8 with certain libraries for a specific project, while another can have Python 3.9 with a different set of libraries for another project.    
+Switching Between Environments:    
+
+To switch to a different environment, you use the command conda activate <env-name>. For example, to switch to the htseq-clip environment, you would use conda activate htseq-clip.    
+Managing Environments:    
+
+You can create, remove, or modify environments using various conda commands. This allows you to manage your project dependencies effectively and avoid conflicts between different projects' requirements.    
+
 
 
 
