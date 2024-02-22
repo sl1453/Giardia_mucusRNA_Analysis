@@ -11,7 +11,7 @@ To check the anaconda/python versions available in your shared facility `module 
 To check what environment you already have `conda info --envs`
 * The output will list all the environemnt you already have, including their paths.
 * and the * symbol highlights the env you are currently in.
-** base: base is the default environment that comes with Anaconda.
+*** base: base is the default environment that comes with Anaconda.
 When you open a new terminal or a new session, by default, the base environment is activated unless you specify otherwise.
 The path /home/share/apps/python/anaconda3-3.9 shows where this environment is located on your file system. This path contains the Python interpreter and installed packages for the base environment.
 
