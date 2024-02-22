@@ -1,5 +1,5 @@
 # Workflow/pipeline details for the Giardia response to viscoelasticity RNA-seq analysis
-### Automation & Basic Software Install
+### Automation & Software Install (Virtue Env Setup)
 Along the way, you might need some automations to quickly extract read numbers or other info from various output files in batches, zipped or unzipped.
 Dig in ([here](https://github.com/sl1453/Giardia_mucusRNA_Analysis/tree/main/SpeedImprovScript)) to find scripts that might suit the need for speeding.
 
