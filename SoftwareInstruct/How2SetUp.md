@@ -6,4 +6,8 @@ Our HPC uses a module system and have different versions of anaconda and python 
 * Remember to set up different virtue enviroments if your projects involve using different versions of the same software and dependencies.
 * This is to advoid conflicts.
 
+To check the anaconda/python versions available in your shared facility
+```bash shell
+module avail```
+
 
