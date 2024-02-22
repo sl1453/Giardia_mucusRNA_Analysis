@@ -19,7 +19,7 @@ parameters: simple clip threshold=7, seed mismatches=2, palindrome threshold=40,
 (TruSeq3-PE-2.fa:2:40:7)
 
 FastQC (v0.11.9) was used for quality control visualization     
-Raw_untrimmed:([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc.SBATCH))    
+Raw_untrimmed:([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_untrimmed.SBATCH))    
 Sequencing_center_trimmed: ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_umd_trimmed.SBATCH))
 
 Most samples have warnings or fail for "per sequence GC content", which I expected because Giardia has high GC contents; and poor "sequence duplication levels" which I expect for RNAseq data. The "per base quality" score always dropps at the end of fragments, and ONLY seen in read 2 sequences.
