@@ -1,5 +1,9 @@
 # Workflow/pipeline details for the Giardia response to viscoelasticity RNA-seq analysis
+### Automation & Basic Software Install
+Along the way, you might need some automation to quickly extract read numbers or other info from various output files, zipped or unzipped.
+Dig in ([here]()) to find scripts that might suits the need for speed imrpvement.
 
+If you need more updated siftwares then I used, ([look here]())for a begainners instruction of how to create your own environemnt and incorporate updated softwares to the sbatch scripts.
 ## Upstream 
 Information about sequence reads (raw read count, read alignment rate, etc.) for the data can be found ([here](https://docs.google.com/spreadsheets/d/17yXVA9PE-rkG_24pJ2p31cf8QelNo2Ly/edit?rtpof=true#gid=566235505))
 
