@@ -8,6 +8,6 @@ Our HPC uses a module system and have different versions of anaconda and python 
 
 To check the anaconda/python versions available in your shared facility
 ```bash shell
-module avail```
+module avail ```
 
 
