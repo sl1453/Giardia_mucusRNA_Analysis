@@ -5,7 +5,7 @@
 #SBATCH --mem=5G
 
 #-----------------------------------------------------------------------------#
-# This script runs counting reads for FASTQ.gz files #
+# This script runs get info from STAR output.out files #
 #-----------------------------------------------------------------------------#
 
 #- Set variables --------------------------------------------------------------$
