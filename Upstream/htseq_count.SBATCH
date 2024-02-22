@@ -11,6 +11,9 @@
 #- Load the module for Anaconda-----------------------------------------------#
 module load anaconda3
 
+#- Source Conda Initialization Script ----------------------------------------#
+source /home/share/apps/python/anaconda3-3.9/etc/profile.d/conda.sh
+
 
 #- Activate my conda virtue environment called htseq-env----------------------#
 conda activate htseq-env
@@ -19,7 +22,7 @@ conda activate htseq-env
 #- Set variables ----------------------------------------------------------------#
 
 bam_dir=/home/sl1453/samsortbam
-count_dir=/home/sl1453/htseq2.17Counting
+count_dir=/home/sl1453/2.17counting
 ref=/home/sl1453/genome/GiardiaDB-66_GintestinalisAssemblageAWB2019.gff
 
 
@@ -31,8 +34,4 @@ do
     base=$(basename ${file} _Aligned.out.sorted.bam)
     htseq-count -f bam -r pos -s reverse -t exon -i gene_id --nonunique fraction ${bam_dir}/${base}_Aligned.out.sorted.bam ${ref} > ${count_dir}/${base}_htseqCount
 done
-
-
-#- Deactivate conda environment-------------------------------------------------#
-conda deactivate
 
