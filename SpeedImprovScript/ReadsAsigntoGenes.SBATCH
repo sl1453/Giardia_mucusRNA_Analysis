@@ -5,13 +5,13 @@
 #SBATCH --mem=5G
 
 #-----------------------------------------------------------------------------#
-# This script runs get info from STAR output.out files #
+# This script runs get info from HTseq output.out files #
 #-----------------------------------------------------------------------------#
 
 #- Set variables --------------------------------------------------------------$
 # Set the directory containing your files
 
-DATA_DIR=/home/sl1453/htseq2.17Counting
+DATA_DIR=/home/sl1453/2.17counting
 
 OUTPUT_FILE="${DATA_DIR}/extracted_data.txt"
 echo "File,Reads_Assigned_to_Genes" > "$OUTPUT_FILE"
