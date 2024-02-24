@@ -24,7 +24,7 @@ FastQC (v0.11.9) was used for quality control visualization
 Raw_untrimmed:([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_untrimmed.SBATCH))    
 Sequencing_center_trimmed: ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/fastqc_umd_trimmed.SBATCH))
 
-Most samples have warnings or fail for "per sequence GC content", which I expected because Giardia has high GC contents; and poor "sequence duplication levels" which I expect for RNAseq data. The "per base quality" score always dropps at the end of fragments, and ONLY seen in read 2 sequences.
+Most samples have warnings for "per sequence GC content", which I expected because Giardia has high GC contents; and poor "sequence duplication levels" which I expect for RNAseq data. The "per base quality" score always dropps at the end of fragments, and ONLY seen in read 2 sequences.
 
 The QC for the prileminary trimming from Luke has successfully removed the adaptor warnings, however, still show poor "per base GC contents" for the first ~15 bases. I decided to use HEADCROP flag to remove the first 15 bases for the UNTRIMMED RAW READS while keeping the adaptor trimming parameters similar to Luke's. All other flags (TRAILING, SLIDINGWINDOW, and MINLEN) are rather general/default for basic quality of bases and did not result in much difference of trimming. 
 
@@ -39,7 +39,7 @@ Mapping was done using the *_Giardia_ assenblage A WB * reference genome from Gi
 
 STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_index.SBATCH)).
 
-Reads were mapped in a two pass method. The first pass followed typical method with splice junctions from annotations ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_map.SBATCH)). Becasue most of VSP genes are duplicated, parameter "outFilterMultimapNmax 2" was chosen;  "alignIntronMax 1" was to account for the fact that _Giardia_ has very few introns (8 cis, 5 trans); "outSAMtype BAM Unsorted".
+Reads were mapped ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_map.SBATCH)). Becasue most of VSP genes are duplicated, parameter "outFilterMultimapNmax 2" was chosen;  "alignIntronMax 1" was to account for the fact that _Giardia_ has very few introns (8 cis, 5 trans); "outSAMtype BAM Unsorted". Due to the strand-specific library we used, it is good to add the strand parameter in STAR for stranded alignment "--outSAMstrandField intronMotif".
 
 Output bam files were sorted, and then indexed ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/SamSortBam.SBATCH))
 
