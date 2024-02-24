@@ -39,7 +39,7 @@ Mapping was done using the *_Giardia_ assenblage A WB * reference genome from Gi
 
 STAR (v2.7.1a) was used for indexing the genome ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_index.SBATCH)).
 
-Reads were mapped ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_map.SBATCH)). Becasue most of VSP genes are duplicated, parameter "outFilterMultimapNmax 2" was chosen;  "alignIntronMax 1" was to account for the fact that _Giardia_ has very few introns (8 cis, 5 trans); "outSAMtype BAM Unsorted". Due to the strand-specific library we used, it is good to add the strand parameter in STAR for stranded alignment "--outSAMstrandField intronMotif".
+Reads were mapped ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/STAR_map.SBATCH)). Becasue most of VSP genes are duplicated, parameter "outFilterMultimapNmax 2" was chosen;  "alignIntronMax 1" was to account for the fact that _Giardia_ has very few introns (8 cis, 5 trans); "outSAMtype BAM Unsorted". We used strand-specific library, so there is no need to specify strand parameter ("--outSAMstrandField intronMotif") in STAR.
 
 Output bam files were sorted, and then indexed ([script](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Upstream/SamSortBam.SBATCH))
 
