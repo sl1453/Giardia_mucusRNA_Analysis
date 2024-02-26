@@ -61,7 +61,8 @@ or
 All downstream analysis done in R using R version 4.0.2
 
 ### DESeq
-Using DESeq2 (v1.30.1) ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Downstream/DESeq.R))
+Using DESeq2 (v1.30.1) ([script_MultiComparison](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Downstream/DESeq2MultiCompare.R)); 
+([script_2conditions](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Downstream/DESeq_C_Gum.R));([script_2conditions](https://github.com/sl1453/Giardia_mucusRNA_Analysis/blob/main/Downstream/DESeq_C_mCell.R)).  
 
 ### GO Enrichment
 Using topGO (v2.42.0) ([script](https://github.com/srmarzec/Culex_Biting_RNAseq/blob/main/Downstream/GOenrichment.R))
